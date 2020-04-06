@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MBlE+VttfidvTXv3yfDXlBeq+DNEYVCXwtmUGS4exQevlZMRGiOnDjSIC7rePYqxTR/b6g54PFLJrbMHxahVCw==",
+  "dgSpecHash": "BJOFuzyXeS1fHOz8ZDK3DOJ3a3TQS/Wpp5JvVcmXDUuO72uu1NthUKB0Mnv+4Pq9WshWsjGfSMTveym3si4MzA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Irma\\source\\repos\\Irma\\Irma\\Irma.csproj",
+  "projectFilePath": "C:\\Users\\Irma\\Desktop\\MIOT\\Irma\\Irma\\Irma.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Irma\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Irma\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

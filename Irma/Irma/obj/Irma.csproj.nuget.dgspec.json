@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Irma\\source\\repos\\Irma\\Irma\\Irma.csproj": {}
+    "C:\\Users\\Irma\\Desktop\\MIOT\\Irma\\Irma\\Irma.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Irma\\source\\repos\\Irma\\Irma\\Irma.csproj": {
+    "C:\\Users\\Irma\\Desktop\\MIOT\\Irma\\Irma\\Irma.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Irma\\source\\repos\\Irma\\Irma\\Irma.csproj",
+        "projectUniqueName": "C:\\Users\\Irma\\Desktop\\MIOT\\Irma\\Irma\\Irma.csproj",
         "projectName": "Irma",
-        "projectPath": "C:\\Users\\Irma\\source\\repos\\Irma\\Irma\\Irma.csproj",
+        "projectPath": "C:\\Users\\Irma\\Desktop\\MIOT\\Irma\\Irma\\Irma.csproj",
         "packagesPath": "C:\\Users\\Irma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Irma\\source\\repos\\Irma\\Irma\\obj\\",
+        "outputPath": "C:\\Users\\Irma\\Desktop\\MIOT\\Irma\\Irma\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

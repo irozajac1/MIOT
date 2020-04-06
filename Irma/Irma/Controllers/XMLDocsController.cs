@@ -7,14 +7,20 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Irma;
 using Irma.Models;
+using System.Xml.Linq;
+using System.Net.Http;
+using System.Xml;
+using Irma.Services;
 
 namespace Irma.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/controller")]
     [ApiController]
     public class XMLDocsController : ControllerBase
     {
         private readonly XMLContext _context;
+        private readonly XMLService service;
+        static readonly HttpClient client = new HttpClient();
 
         public XMLDocsController(XMLContext context)
         {
@@ -25,7 +31,14 @@ namespace Irma.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<XMLDoc>>> GetXMLDocs()
         {
-            return await _context.XMLDocs.ToListAsync();
+            var obj = await _context.XMLDocs.ToListAsync();
+            return obj;
+        }
+
+        [HttpGet("proba")]
+        public void GetDocument()
+        {
+            service.GetXML();
         }
 
         // GET: api/XMLDocs/5

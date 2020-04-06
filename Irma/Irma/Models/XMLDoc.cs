@@ -8,6 +8,6 @@ namespace Irma.Models
     public class XMLDoc
     {
         public long Id { get; set; }
-        public string dokument { get; set; }
+        public string Dokument { get; set; }
     }
 }
