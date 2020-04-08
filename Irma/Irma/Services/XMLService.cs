@@ -49,7 +49,16 @@ namespace Irma.Services
 
 
             //naziv senzora i tip (na osnovu naziva možes napisati tip bez da ga izvlacis iz xml-a
+            //prikom svakog ocitanja xml-a u liste se spašavaju vrijednosti
             List<string> imenaSenzora = new List<string>();
+            List<string> tipoviSenzora = new List<string>();
+            List<string> vremenaMjerenja = new List<string>();
+            List<string> minVrijednosti = new List<string>();
+            List<string> maxVrijednosti = new List<string>();
+            List<string> alarmi = new List<string>();
+            List<string> vrijednostiMjerenja = new List<string>();
+            List<string> validnostiMjerenja = new List<string>();
+
             for (int i = 0; i < 3; i++)
             {
                 if (listaLokacija[i] == "Server sala 1")
@@ -58,18 +67,109 @@ namespace Irma.Services
                     for (int j = 0; j < 6; j++)
                     {
                         imenaSenzora.Add(senzor[0].ChildNodes[j].FirstChild.InnerText);
+
+                        //tip mjerenja
+                        string tip = senzor[0].ChildNodes[j].ChildNodes[2].InnerText;
+                        tipoviSenzora.Add(tip);
+
+                        // vrijeme mjerenja
+                        string vrijemeMjerenja = senzor[0].ChildNodes[j].ChildNodes[14].InnerText;
+                        vremenaMjerenja.Add(vrijemeMjerenja);
+
+                        //min vrijednost
+                        string minVrijednost = senzor[0].ChildNodes[j].ChildNodes[6].InnerText;
+                        minVrijednosti.Add(minVrijednost);
+
+                        //max vrijednost
+                        string maxVrijednost = senzor[0].ChildNodes[j].ChildNodes[7].InnerText;
+                        maxVrijednosti.Add(maxVrijednost);
+
+                        //alarm
+                        string alarm = senzor[0].ChildNodes[j].ChildNodes[10].InnerText;
+                        alarmi.Add(alarm);
+
+                        //vrijednost mjerenja
+                        string vrijednostMjerenja = senzor[0].ChildNodes[j].ChildNodes[13].InnerText;
+                        vrijednostiMjerenja.Add(vrijednostMjerenja);
+
+                        //validnost mjerenja
+                        string validnost = senzor[0].ChildNodes[j].ChildNodes[15].InnerText;
+                        validnostiMjerenja.Add(validnost);
                     }
+
 
                 }
                 if (listaLokacija[i] == "Kotlovnica")
                 {
                     var senzor = document.GetElementsByTagName("Sensors");
-                    var imeSenzora = senzor[1].FirstChild.FirstChild.InnerText;
+                    for (int j = 0; j < 6; j++)
+                    {
+                        imenaSenzora.Add(senzor[1].ChildNodes[j].FirstChild.InnerText);
+
+                        //tip mjerenja
+                        string tip = senzor[1].ChildNodes[j].ChildNodes[2].InnerText;
+                        tipoviSenzora.Add(tip);
+
+                        // vrijeme mjerenja
+                        string vrijemeMjerenja = senzor[1].ChildNodes[j].ChildNodes[14].InnerText;
+                        vremenaMjerenja.Add(vrijemeMjerenja);
+
+                        //min vrijednost
+                        string minVrijednost = senzor[1].ChildNodes[j].ChildNodes[6].InnerText;
+                        minVrijednosti.Add(minVrijednost);
+
+                        //max vrijednost
+                        string maxVrijednost = senzor[1].ChildNodes[j].ChildNodes[7].InnerText;
+                        maxVrijednosti.Add(maxVrijednost);
+
+                        //alarm
+                        string alarm = senzor[1].ChildNodes[j].ChildNodes[10].InnerText;
+                        alarmi.Add(alarm);
+
+                        //vrijednost mjerenja
+                        string vrijednostMjerenja = senzor[1].ChildNodes[j].ChildNodes[13].InnerText;
+                        vrijednostiMjerenja.Add(vrijednostMjerenja);
+
+                        //validnost mjerenja
+                        string validnost = senzor[1].ChildNodes[j].ChildNodes[15].InnerText;
+                        validnostiMjerenja.Add(validnost);
+                    }
                 }
                 if (listaLokacija[i] == "Server sala 2")
                 {
                     var senzor = document.GetElementsByTagName("Sensors");
-                    var imeSenzora = senzor[2].FirstChild.FirstChild.InnerText;
+                    for (int j = 0; j < 6; j++)
+                    {
+                        imenaSenzora.Add(senzor[2].ChildNodes[j].FirstChild.InnerText);
+
+                        //tip mjerenja
+                        string tip = senzor[2].ChildNodes[j].ChildNodes[2].InnerText;
+                        tipoviSenzora.Add(tip);
+
+                        // vrijeme mjerenja
+                        string vrijemeMjerenja = senzor[2].ChildNodes[j].ChildNodes[14].InnerText;
+                        vremenaMjerenja.Add(vrijemeMjerenja);
+
+                        //min vrijednost
+                        string minVrijednost = senzor[2].ChildNodes[j].ChildNodes[6].InnerText;
+                        minVrijednosti.Add(minVrijednost);
+
+                        //max vrijednost
+                        string maxVrijednost = senzor[2].ChildNodes[j].ChildNodes[7].InnerText;
+                        maxVrijednosti.Add(maxVrijednost);
+
+                        //alarm
+                        string alarm = senzor[2].ChildNodes[j].ChildNodes[10].InnerText;
+                        alarmi.Add(alarm);
+
+                        //vrijednost mjerenja
+                        string vrijednostMjerenja = senzor[2].ChildNodes[j].ChildNodes[13].InnerText;
+                        vrijednostiMjerenja.Add(vrijednostMjerenja);
+
+                        //validnost mjerenja
+                        string validnost = senzor[2].ChildNodes[j].ChildNodes[15].InnerText;
+                        validnostiMjerenja.Add(validnost);
+                    }
                 }
             }
 
