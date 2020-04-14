@@ -1,0 +1,5 @@
+C:\Users\Irma\source\repos\IrmaApp\IrmaApp.Application\bin\Debug\netstandard2.1\IrmaApp.Application.deps.json
+C:\Users\Irma\source\repos\IrmaApp\IrmaApp.Application\bin\Debug\netstandard2.1\IrmaApp.Application.dll
+C:\Users\Irma\source\repos\IrmaApp\IrmaApp.Application\obj\Debug\netstandard2.1\IrmaApp.Application.csprojAssemblyReference.cache
+C:\Users\Irma\source\repos\IrmaApp\IrmaApp.Application\obj\Debug\netstandard2.1\IrmaApp.Application.AssemblyInfoInputs.cache
+C:\Users\Irma\source\repos\IrmaApp\IrmaApp.Application\obj\Debug\netstandard2.1\IrmaApp.Application.AssemblyInfo.cs

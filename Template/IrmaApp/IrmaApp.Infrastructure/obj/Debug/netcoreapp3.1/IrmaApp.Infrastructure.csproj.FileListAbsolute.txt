@@ -1,0 +1,5 @@
+C:\Users\Irma\source\repos\IrmaApp\IrmaApp.Infrastructure\bin\Debug\netcoreapp3.1\IrmaApp.Infrastructure.deps.json
+C:\Users\Irma\source\repos\IrmaApp\IrmaApp.Infrastructure\bin\Debug\netcoreapp3.1\IrmaApp.Infrastructure.dll
+C:\Users\Irma\source\repos\IrmaApp\IrmaApp.Infrastructure\obj\Debug\netcoreapp3.1\IrmaApp.Infrastructure.csprojAssemblyReference.cache
+C:\Users\Irma\source\repos\IrmaApp\IrmaApp.Infrastructure\obj\Debug\netcoreapp3.1\IrmaApp.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Irma\source\repos\IrmaApp\IrmaApp.Infrastructure\obj\Debug\netcoreapp3.1\IrmaApp.Infrastructure.AssemblyInfo.cs

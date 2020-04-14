@@ -123,7 +123,9 @@ namespace Irma.Controllers
                         string validnost = senzor[0].ChildNodes[j].ChildNodes[15].InnerText;
                         validnostiMjerenja.Add(validnost);
                     }
-
+                    Console.WriteLine(imenaSenzora);
+                    Console.WriteLine(vremenaMjerenja);
+                    Console.WriteLine(vrijednostiMjerenja);
 
                 }
                 if (listaLokacija[i] == "Kotlovnica")
