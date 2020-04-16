@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QpSVwc8CHV2lJ3WK4pYiAWbN589Iw73otDojBCMut7IdWu/MADOtNWvbRFyvWQufPCyfkBKBK5hNoXOc86T11w==",
+  "dgSpecHash": "3Hf0NmR7FfbvM4o5AEh/sKkCxXN9GYPH/SyqrfqRdTpZBn3nMIrGqFYVKjcZc3QRuxoB8YimdJioIemY6GN2Fg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Irma\\source\\repos\\IrmaApp\\IrmaApp.Infrastructure\\IrmaApp.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Infrastructure\\IrmaApp.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Irma\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\Irma\\.nuget\\packages\\identitymodel\\4.0.0\\identitymodel.4.0.0.nupkg.sha512",

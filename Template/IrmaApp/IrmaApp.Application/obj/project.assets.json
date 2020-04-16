@@ -860,11 +860,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Irma\\source\\repos\\IrmaApp\\IrmaApp.Application\\IrmaApp.Application.csproj",
+      "projectUniqueName": "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Application\\IrmaApp.Application.csproj",
       "projectName": "IrmaApp.Application",
-      "projectPath": "C:\\Users\\Irma\\source\\repos\\IrmaApp\\IrmaApp.Application\\IrmaApp.Application.csproj",
+      "projectPath": "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Application\\IrmaApp.Application.csproj",
       "packagesPath": "C:\\Users\\Irma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Irma\\source\\repos\\IrmaApp\\IrmaApp.Application\\obj\\",
+      "outputPath": "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

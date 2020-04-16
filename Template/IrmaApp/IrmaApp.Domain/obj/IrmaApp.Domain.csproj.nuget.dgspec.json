@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Irma\\source\\repos\\IrmaApp\\IrmaApp.Domain\\IrmaApp.Domain.csproj": {}
+    "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Domain\\IrmaApp.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Irma\\source\\repos\\IrmaApp\\IrmaApp.Domain\\IrmaApp.Domain.csproj": {
+    "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Domain\\IrmaApp.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Irma\\source\\repos\\IrmaApp\\IrmaApp.Domain\\IrmaApp.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Domain\\IrmaApp.Domain.csproj",
         "projectName": "IrmaApp.Domain",
-        "projectPath": "C:\\Users\\Irma\\source\\repos\\IrmaApp\\IrmaApp.Domain\\IrmaApp.Domain.csproj",
+        "projectPath": "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Domain\\IrmaApp.Domain.csproj",
         "packagesPath": "C:\\Users\\Irma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Irma\\source\\repos\\IrmaApp\\IrmaApp.Domain\\obj\\",
+        "outputPath": "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

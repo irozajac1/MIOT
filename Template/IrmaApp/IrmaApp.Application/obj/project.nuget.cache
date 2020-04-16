@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+NRyrV0HA1B3vhPzZKhHSGCQPZ+6PG+OBHraYoAfFyTxXWO9Vg0UbjdD5iysi9yVLBOrAvLvyWQSggV7uYIR3g==",
+  "dgSpecHash": "yzfsHETYlbf5Egz9Ogja/fenPbVo1pg3ULKJEi4i8It404BAzZDfwUjr19kTWZ1dii+iJyn7HcMQQ6a+FjZkig==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Irma\\source\\repos\\IrmaApp\\IrmaApp.Application\\IrmaApp.Application.csproj",
+  "projectFilePath": "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Application\\IrmaApp.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Irma\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\Irma\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

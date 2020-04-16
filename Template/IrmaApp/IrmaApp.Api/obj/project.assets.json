@@ -5962,11 +5962,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Irma\\source\\repos\\IrmaApp\\IrmaApp.Api\\IrmaApp.Api.csproj",
+      "projectUniqueName": "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Api\\IrmaApp.Api.csproj",
       "projectName": "IrmaApp.Api",
-      "projectPath": "C:\\Users\\Irma\\source\\repos\\IrmaApp\\IrmaApp.Api\\IrmaApp.Api.csproj",
+      "projectPath": "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Api\\IrmaApp.Api.csproj",
       "packagesPath": "C:\\Users\\Irma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Irma\\source\\repos\\IrmaApp\\IrmaApp.Api\\obj\\",
+      "outputPath": "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -5987,8 +5987,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Irma\\source\\repos\\IrmaApp\\IrmaApp.Infrastructure\\IrmaApp.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\Irma\\source\\repos\\IrmaApp\\IrmaApp.Infrastructure\\IrmaApp.Infrastructure.csproj"
+            "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Infrastructure\\IrmaApp.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Infrastructure\\IrmaApp.Infrastructure.csproj"
             }
           }
         }

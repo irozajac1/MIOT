@@ -27,6 +27,10 @@ namespace IrmaApp.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddInfrastructure(Configuration);
+
+            services.AddControllersWithViews();
+            services.AddRazorPages();
+            services.AddInfrastructure(Configuration);
             services.AddControllers();
         }
 

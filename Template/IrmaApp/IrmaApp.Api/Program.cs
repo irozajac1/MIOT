@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using IrmaApp.Infrastructure.Data;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,8 +25,8 @@ namespace IrmaApp.Api
 
                 try
                 {
-                    var context = services.GetRequiredService<ApplicationDbContext>();
-                    //context.Database.Migrate();
+                    var context = services.GetRequiredService<DatabaseContext>();
+                    context.Database.Migrate();
 
                 }
                 catch (Exception ex)
