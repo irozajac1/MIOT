@@ -32,6 +32,9 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
+              "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Application\\IrmaApp.Core.csproj": {
+                "projectPath": "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Application\\IrmaApp.Core.csproj"
+              },
               "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Infrastructure\\IrmaApp.Infrastructure.csproj": {
                 "projectPath": "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Infrastructure\\IrmaApp.Infrastructure.csproj"
               }
@@ -46,6 +49,18 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -68,12 +83,12 @@
         }
       }
     },
-    "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Application\\IrmaApp.Application.csproj": {
+    "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Application\\IrmaApp.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Application\\IrmaApp.Application.csproj",
-        "projectName": "IrmaApp.Application",
-        "projectPath": "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Application\\IrmaApp.Application.csproj",
+        "projectUniqueName": "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Application\\IrmaApp.Core.csproj",
+        "projectName": "IrmaApp.Core",
+        "projectPath": "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Application\\IrmaApp.Core.csproj",
         "packagesPath": "C:\\Users\\Irma\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Application\\obj\\",
         "projectStyle": "PackageReference",
@@ -108,6 +123,20 @@
         "netstandard2.1": {
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.1.3, )"
             }
@@ -159,8 +188,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Application\\IrmaApp.Application.csproj": {
-                "projectPath": "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Application\\IrmaApp.Application.csproj"
+              "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Application\\IrmaApp.Core.csproj": {
+                "projectPath": "C:\\Users\\Irma\\Desktop\\MIOT\\Template\\IrmaApp\\IrmaApp.Application\\IrmaApp.Core.csproj"
               }
             }
           }
@@ -183,6 +212,12 @@
               "version": "[3.1.3, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.3, )"
             },

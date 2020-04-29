@@ -16,7 +16,7 @@ namespace IrmaApp.Infrastructure
             services.AddDbContext<DatabaseContext>(options =>
                 options.UseSqlServer(
                     configuration.GetConnectionString("IdentityConnection"),
-                    b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
+                    b => b.MigrationsAssembly(typeof(DatabaseContext).Assembly.FullName)));
 
             //services.AddDefaultIdentity<ApplicationUser>()
             //    .AddEntityFrameworkStores<ApplicationDbContext>();

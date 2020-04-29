@@ -1,0 +1,9 @@
+C:\Users\Irma\Desktop\MIOT\Template\IrmaApp\IrmaApp.Application\bin\Debug\netstandard2.1\IrmaApp.Core.deps.json
+C:\Users\Irma\Desktop\MIOT\Template\IrmaApp\IrmaApp.Application\bin\Debug\netstandard2.1\IrmaApp.Core.dll
+C:\Users\Irma\Desktop\MIOT\Template\IrmaApp\IrmaApp.Application\bin\Debug\netstandard2.1\IrmaApp.Core.pdb
+C:\Users\Irma\Desktop\MIOT\Template\IrmaApp\IrmaApp.Application\obj\Debug\netstandard2.1\IrmaApp.Core.csproj.CoreCompileInputs.cache
+C:\Users\Irma\Desktop\MIOT\Template\IrmaApp\IrmaApp.Application\obj\Debug\netstandard2.1\IrmaApp.Core.AssemblyInfoInputs.cache
+C:\Users\Irma\Desktop\MIOT\Template\IrmaApp\IrmaApp.Application\obj\Debug\netstandard2.1\IrmaApp.Core.AssemblyInfo.cs
+C:\Users\Irma\Desktop\MIOT\Template\IrmaApp\IrmaApp.Application\obj\Debug\netstandard2.1\IrmaApp.Core.dll
+C:\Users\Irma\Desktop\MIOT\Template\IrmaApp\IrmaApp.Application\obj\Debug\netstandard2.1\IrmaApp.Core.pdb
+C:\Users\Irma\Desktop\MIOT\Template\IrmaApp\IrmaApp.Application\obj\Debug\netstandard2.1\IrmaApp.Core.csprojAssemblyReference.cache
