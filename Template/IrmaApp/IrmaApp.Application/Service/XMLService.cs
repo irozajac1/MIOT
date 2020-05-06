@@ -37,7 +37,6 @@ namespace IrmaApp.Core.Service
             doc.VrijemeOcitanja = dt;
             _context.XMLDocs.Add(doc);
 
-            _context.SaveChanges();
 
             var devices = document.GetElementsByTagName("Device");
             var senzor = document.GetElementsByTagName("Sensors");
@@ -57,7 +56,6 @@ namespace IrmaApp.Core.Service
                     uredjaji.Add(_uredjaj);
                     _context.Uredjaji.Add(_uredjaj);
 
-                    _context.SaveChanges();
                 }
                     
             }

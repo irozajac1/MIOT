@@ -17,5 +17,6 @@ namespace IrmaApp.Core.Entity
         public string VrijednostMjerenja { get; set; }
         public string ValidnostMjeranja { get; set; }
         public int UredjajId { get; set; }
+        public Uredjaj Uredjaj { get; set; }
     }
 }
