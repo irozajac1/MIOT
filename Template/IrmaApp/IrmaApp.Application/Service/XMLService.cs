@@ -24,41 +24,39 @@ namespace IrmaApp.Core.Service
         }
         public String getXmlDocument()
         {
-            string link = _config.GetSection("DataSource").Value;
+            
+                string link = _config.GetSection("DataSource").Value;
 
-            XmlDocument document = new XmlDocument();
+                XmlDocument document = new XmlDocument();
+                document.Load(link);
+                //vrijeme očitavanja xml-a
+                var timestamp = document.DocumentElement.FirstChild.LastChild.InnerText;
+                var dt = pretvaranjeDatuma(timestamp);
 
-            document.Load(link);
+                XMLDoc doc = new XMLDoc();
+                doc.VrijemeOcitanja = dt;
+                _context.XMLDocs.Add(doc);
 
-            var timestamp = document.DocumentElement.FirstChild.LastChild.InnerText;
-            var dt = pretvaranjeDatuma(timestamp);
+                var devices = document.GetElementsByTagName("Device");
+                var senzor = document.GetElementsByTagName("Sensors");
 
-            XMLDoc doc = new XMLDoc();
-            doc.VrijemeOcitanja = dt;
-            _context.XMLDocs.Add(doc);
-
-
-            var devices = document.GetElementsByTagName("Device");
-            var senzor = document.GetElementsByTagName("Sensors");
-
-            //za svaki uredjaj ispitaj da li je null ako nije upisi u bazu
-            List<Uredjaj> uredjaji = new List<Uredjaj>();
-
-            foreach (XmlNode device in devices)
-            {
-               if (!ProvjeraUredjaja(device))
+                //za svaki uredjaj ispitaj da li je null ako nije upisi u bazu
+                List<Uredjaj> uredjaji = new List<Uredjaj>();
+                foreach (XmlNode device in devices)
                 {
-                    Uredjaj _uredjaj = new Uredjaj();
+                    //if (ProvjeraUredjaja(device))
+                    //{
+                        Uredjaj _uredjaj = new Uredjaj();
 
-                    _uredjaj.Lokacija = device.ChildNodes[0].ChildNodes[0].InnerText;
-                    _uredjaj.DeviceId = int.Parse(device.Attributes[0].InnerText);
+                        _uredjaj.Lokacija = device.ChildNodes[0].ChildNodes[0].InnerText;
+                        _uredjaj.DeviceId = int.Parse(device.Attributes[0].InnerText);
 
-                    uredjaji.Add(_uredjaj);
-                    _context.Uredjaji.Add(_uredjaj);
+                        uredjaji.Add(_uredjaj);
+                        _context.Uredjaji.Add(_uredjaj);
 
-                }
-                    
+                    //} 
             }
+             
             //foreach (Uredjaj uredjaj in uredjaji)device.ChildNodes[0].ChildNodes[0].InnerText
             foreach (Uredjaj uredjaj in _context.Uredjaji)
             {
@@ -71,21 +69,31 @@ namespace IrmaApp.Core.Service
                         for (int j = 0; j < senzor[0].ChildNodes.Count; j++)
                         {
                             Senzor _senzor = new Senzor();
-                            if (ProvjeraSenzora(senzor[0], j))
-                            {
+                            //if (ProvjeraSenzora(senzor[0], j))
+                            //{
                                 _senzor.ImeSenzora = senzor[0].ChildNodes[j].FirstChild.InnerText;
                                 _senzor.SenzorId = int.Parse(senzor[0].ChildNodes[j].Attributes[0].InnerText);
                                 _senzor.TipSenzora = senzor[0].ChildNodes[j].ChildNodes[2].InnerText;
                                 _senzor.MinVrijednost = senzor[0].ChildNodes[j].ChildNodes[6].InnerText;
                                 _senzor.MaxVrijednost = senzor[0].ChildNodes[j].ChildNodes[7].InnerText;
                                 _senzor.Alarm = senzor[0].ChildNodes[j].ChildNodes[10].InnerText;
-                                _senzor.VrijednostMjerenja = senzor[0].ChildNodes[j].ChildNodes[13].InnerText;
+                                _senzor.VrijednostMjerenja = int.Parse(senzor[0].ChildNodes[j].ChildNodes[13].InnerText);
+                                if (_senzor.ImeSenzora.Equals("TEMPERATURA"))
+                                {
+                                    _senzor.VrijednostMjerenja = int.Parse(senzor[0].ChildNodes[j].ChildNodes[13].InnerText) / 1000;
+                                }
+                                else if (_senzor.ImeSenzora.Equals("VLAŽNOST"))
+                                {
+                                    _senzor.VrijednostMjerenja = int.Parse(senzor[0].ChildNodes[j].ChildNodes[13].InnerText) / 100;
+                                }
+                                else
+                                    _senzor.VrijednostMjerenja = int.Parse(senzor[0].ChildNodes[j].ChildNodes[13].InnerText);
                                 _senzor.ValidnostMjeranja = senzor[0].ChildNodes[j].ChildNodes[15].InnerText;
                                 _senzor.VrijemeMjerenja = pretvaranjeDatuma(senzor[0].ChildNodes[j].ChildNodes[14].InnerText);
-                                _senzor.UredjajId = uredjaj.DeviceId;
+
 
                                 _context.Senzori.Add(_senzor);
-                            }
+                            //}
                             mjerenja_sala1.Add(_senzor);
 
                             uredjaj.Senzori = mjerenja_sala1;
@@ -102,21 +110,32 @@ namespace IrmaApp.Core.Service
                         for (int j = 0; j < senzor[1].ChildNodes.Count; j++)
                         {
                             Senzor _senzor = new Senzor();
-                            if (ProvjeraSenzora(senzor[1], j))
-                            {
+                            //if (ProvjeraSenzora(senzor[1], j))
+                            //{
                                 _senzor.ImeSenzora = senzor[1].ChildNodes[j].FirstChild.InnerText;
                                 _senzor.SenzorId = int.Parse(senzor[1].ChildNodes[j].Attributes[0].InnerText);
                                 _senzor.TipSenzora = senzor[1].ChildNodes[j].ChildNodes[2].InnerText;
                                 _senzor.MinVrijednost = senzor[1].ChildNodes[j].ChildNodes[6].InnerText;
                                 _senzor.MaxVrijednost = senzor[1].ChildNodes[j].ChildNodes[7].InnerText;
                                 _senzor.Alarm = senzor[1].ChildNodes[j].ChildNodes[10].InnerText;
-                                _senzor.VrijednostMjerenja = senzor[1].ChildNodes[j].ChildNodes[13].InnerText;
+                                if(_senzor.ImeSenzora.Equals("TEMPERATURA"))
+                                {
+                                    _senzor.VrijednostMjerenja = int.Parse(senzor[1].ChildNodes[j].ChildNodes[13].InnerText) / 1000;
+                                }
+                                else if (_senzor.ImeSenzora.Equals("VLAŽNOST"))
+                                {
+                                    _senzor.VrijednostMjerenja = int.Parse(senzor[1].ChildNodes[j].ChildNodes[13].InnerText) / 100;
+                                }
+                                else
+                                    _senzor.VrijednostMjerenja = int.Parse(senzor[1].ChildNodes[j].ChildNodes[13].InnerText);
                                 _senzor.ValidnostMjeranja = senzor[1].ChildNodes[j].ChildNodes[15].InnerText;
                                 _senzor.VrijemeMjerenja = pretvaranjeDatuma(senzor[1].ChildNodes[j].ChildNodes[14].InnerText);
-                                _senzor.UredjajId = uredjaj.DeviceId;
 
-                                _context.Senzori.Add(_senzor);
-                            }
+                            //_senzor.Uredjaj.DeviceId = uredjaj.DeviceId;
+                            
+
+                            _context.Senzori.Add(_senzor);
+                            //}
                             kotlovnica.Add(_senzor);
                             uredjaj.Senzori = kotlovnica;
                         }
@@ -127,21 +146,31 @@ namespace IrmaApp.Core.Service
                         for (int j = 0; j < senzor[2].ChildNodes.Count; j++)
                         {
                             Senzor _senzor = new Senzor();
-                            if (ProvjeraSenzora(senzor[0], j))
-                            {
+                            //if (ProvjeraSenzora(senzor[0], j))
+                            //{
                                 _senzor.ImeSenzora = senzor[2].ChildNodes[j].FirstChild.InnerText;
                                 _senzor.SenzorId = int.Parse(senzor[2].ChildNodes[j].Attributes[0].InnerText);
                                 _senzor.TipSenzora = senzor[2].ChildNodes[j].ChildNodes[2].InnerText;
                                 _senzor.MinVrijednost = senzor[2].ChildNodes[j].ChildNodes[6].InnerText;
                                 _senzor.MaxVrijednost = senzor[2].ChildNodes[j].ChildNodes[7].InnerText;
                                 _senzor.Alarm = senzor[2].ChildNodes[j].ChildNodes[10].InnerText;
-                                _senzor.VrijednostMjerenja = senzor[2].ChildNodes[j].ChildNodes[13].InnerText;
-                                _senzor.ValidnostMjeranja = senzor[2].ChildNodes[j].ChildNodes[15].InnerText;
+                                if (_senzor.ImeSenzora.Equals("TEMPERATURA"))
+                                {
+                                    _senzor.VrijednostMjerenja = int.Parse(senzor[2].ChildNodes[j].ChildNodes[13].InnerText) / 1000;
+                                }
+                                else if (_senzor.ImeSenzora.Equals("VLAŽNOST"))
+                                {
+                                    _senzor.VrijednostMjerenja = int.Parse(senzor[2].ChildNodes[j].ChildNodes[13].InnerText) / 100;
+                                }
+                                else
+                                    _senzor.VrijednostMjerenja = int.Parse(senzor[2].ChildNodes[j].ChildNodes[13].InnerText); _senzor.ValidnostMjeranja = senzor[2].ChildNodes[j].ChildNodes[15].InnerText;
                                 _senzor.VrijemeMjerenja = pretvaranjeDatuma(senzor[2].ChildNodes[j].ChildNodes[14].InnerText);
-                                _senzor.UredjajId = uredjaj.DeviceId;
 
-                                _context.Senzori.Add(_senzor);
-                            }
+                            //_senzor.Uredjaj.DeviceId = uredjaj.DeviceId;
+                            
+
+                            _context.Senzori.Add(_senzor);
+                            //}
                             mjerenja_sala2.Add(_senzor);
                             uredjaj.Senzori = mjerenja_sala2;
                         }
@@ -161,23 +190,23 @@ namespace IrmaApp.Core.Service
             var dt = new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(datum).ToLocalTime();
             return dt;
         }
-        private bool ProvjeraSenzora(XmlNode senzor, int j)
-        {
-            var _senzor = _context.Senzori.FirstOrDefault(x => x.SenzorId == int.Parse(senzor.ChildNodes[j].Attributes[0].InnerText));
-            if (_senzor == null)
-                return false;
-            else
-            return true;
+        //private bool ProvjeraSenzora(XmlNode senzor, int j)
+        //{
+        //    var _senzor = _context.Senzori.FirstOrDefault(x => x.SenzorId == int.Parse(senzor.ChildNodes[j].Attributes[0].InnerText));
+        //    if (_senzor == null)
+        //        return false;
+        //    else
+        //    return true;
 
-        }
+        //}
 
-        private bool ProvjeraUredjaja(XmlNode uredjaj)
-        {
-            var _uredjaj = _context.Uredjaji.FirstOrDefault(x => x.DeviceId == int.Parse(uredjaj.Attributes[0].InnerText));
-            if (_uredjaj != null) return true;
-            else
-            return false;
-        }
+        //private bool ProvjeraUredjaja(XmlNode uredjaj)
+        //{
+        //    var _uredjaj = _context.Uredjaji.FirstOrDefault(x => x.DeviceId == int.Parse(uredjaj.Attributes[0].InnerText));
+        //    if (_uredjaj != null) return true;
+        //    else
+        //    return false;
+        //}
 
         private Uredjaj NadjiUredjaj(int id)
         {

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace IrmaApp.Core.Entity
 {
-    public class Senzor
+    public class SenzorDTO
     {
         public Guid Id { get; set; }
         public int SenzorId { get; set; }
@@ -16,7 +16,6 @@ namespace IrmaApp.Core.Entity
         public string Alarm { get; set; }
         public Double VrijednostMjerenja { get; set; }
         public string ValidnostMjeranja { get; set; }
-        //public int UredjajId { get; set; }
-        public Uredjaj Uredjaj { get; set; }
+        public Guid Uredjaj { get; set; }
     }
 }

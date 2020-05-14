@@ -8,8 +8,6 @@ namespace IrmaApp.Core.Entity
     {
         public Guid Id { get; set; }
         public DateTime VrijemeOcitanja { get; set; }
-        public String message { get; set; }
-        public String messageDetails { get; set; }
 
     }
 }

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace IrmaApp.Core.Migrations
 {
-    public partial class Init : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -25,9 +25,7 @@ namespace IrmaApp.Core.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    VrijemeOcitanja = table.Column<DateTime>(nullable: false),
-                    message = table.Column<string>(nullable: true),
-                    messageDetails = table.Column<string>(nullable: true)
+                    VrijemeOcitanja = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -46,26 +44,25 @@ namespace IrmaApp.Core.Migrations
                     MinVrijednost = table.Column<string>(nullable: true),
                     MaxVrijednost = table.Column<string>(nullable: true),
                     Alarm = table.Column<string>(nullable: true),
-                    VrijednostMjerenja = table.Column<string>(nullable: true),
+                    VrijednostMjerenja = table.Column<double>(nullable: false),
                     ValidnostMjeranja = table.Column<string>(nullable: true),
-                    UredjajId = table.Column<int>(nullable: false),
-                    UredjajId1 = table.Column<Guid>(nullable: true)
+                    UredjajId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Senzori", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Senzori_Uredjaji_UredjajId1",
-                        column: x => x.UredjajId1,
+                        name: "FK_Senzori_Uredjaji_UredjajId",
+                        column: x => x.UredjajId,
                         principalTable: "Uredjaji",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Senzori_UredjajId1",
+                name: "IX_Senzori_UredjajId",
                 table: "Senzori",
-                column: "UredjajId1");
+                column: "UredjajId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

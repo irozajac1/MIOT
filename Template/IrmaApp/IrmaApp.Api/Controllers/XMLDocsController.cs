@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using IrmaApp.Core.Interface;
+using IrmaApp.Core.Model.Response;
 
 namespace IrmaApp.Api.Controllers
 {
@@ -13,17 +14,26 @@ namespace IrmaApp.Api.Controllers
     public class XMLDocsController : ControllerBase
     {
         private readonly IXMLService _service;
+        //private ReportService _reportService;
 
-        public XMLDocsController(IXMLService ixmlService)
+        public XMLDocsController(IXMLService ixmlService, ReportService reportService)
         {
             _service = ixmlService;
+            //_reportService = reportService;
 
         }
 
         [HttpGet("getXML")]
-        public String GetDocument()
+        public IActionResult GetDocument()
         {
-           return _service.getXmlDocument();
+            _service.getXmlDocument();
+            return Ok();
         }
+
+        //[HttpGet("getSenzor")]
+        //public String getVrijednostiSenzora()
+        //{
+        //    return _reportService.GetReportBySenzorName(new Core.Model.Request.RequestReport());
+        //}
     }
 }

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IrmaApp.Core.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20200428202814_Init")]
-    partial class Init
+    [Migration("20200507193229_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -45,24 +45,21 @@ namespace IrmaApp.Core.Migrations
                     b.Property<string>("TipSenzora")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UredjajId")
-                        .HasColumnType("int");
-
-                    b.Property<Guid?>("UredjajId1")
+                    b.Property<Guid?>("UredjajId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ValidnostMjeranja")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("VrijednostMjerenja")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<double>("VrijednostMjerenja")
+                        .HasColumnType("float");
 
                     b.Property<DateTime>("VrijemeMjerenja")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UredjajId1");
+                    b.HasIndex("UredjajId");
 
                     b.ToTable("Senzori");
                 });
@@ -93,12 +90,6 @@ namespace IrmaApp.Core.Migrations
                     b.Property<DateTime>("VrijemeOcitanja")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("message")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("messageDetails")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.ToTable("XMLDocs");
@@ -106,9 +97,9 @@ namespace IrmaApp.Core.Migrations
 
             modelBuilder.Entity("IrmaApp.Core.Entity.Senzor", b =>
                 {
-                    b.HasOne("IrmaApp.Core.Entity.Uredjaj", null)
+                    b.HasOne("IrmaApp.Core.Entity.Uredjaj", "Uredjaj")
                         .WithMany("Senzori")
-                        .HasForeignKey("UredjajId1");
+                        .HasForeignKey("UredjajId");
                 });
 #pragma warning restore 612, 618
         }
