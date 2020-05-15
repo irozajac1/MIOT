@@ -24,7 +24,7 @@ namespace IrmaApp.Api.Controllers
         }
 
         [HttpGet("getSenzor")]
-        public List<ResponseReport> getSenzorByName(RequestReport report)
+        public List<ResponseReport> GetSenzorByName(RequestReport report)
         {
             List<Senzor> Senzori = _reportService.GetReportBySenzorName(report);
             List<SenzorDTO> SenzorDTOs = _reportService.GetReportBySenzorNameDTO(Senzori);

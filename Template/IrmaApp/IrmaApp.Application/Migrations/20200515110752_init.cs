@@ -46,23 +46,24 @@ namespace IrmaApp.Core.Migrations
                     Alarm = table.Column<string>(nullable: true),
                     VrijednostMjerenja = table.Column<double>(nullable: false),
                     ValidnostMjeranja = table.Column<string>(nullable: true),
-                    UredjajId = table.Column<Guid>(nullable: true)
+                    UredjajId = table.Column<int>(nullable: false),
+                    UredjajId1 = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Senzori", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Senzori_Uredjaji_UredjajId",
-                        column: x => x.UredjajId,
+                        name: "FK_Senzori_Uredjaji_UredjajId1",
+                        column: x => x.UredjajId1,
                         principalTable: "Uredjaji",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Senzori_UredjajId",
+                name: "IX_Senzori_UredjajId1",
                 table: "Senzori",
-                column: "UredjajId");
+                column: "UredjajId1");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

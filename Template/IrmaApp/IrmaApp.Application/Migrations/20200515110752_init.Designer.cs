@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IrmaApp.Core.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20200507193229_init")]
+    [Migration("20200515110752_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,7 +45,10 @@ namespace IrmaApp.Core.Migrations
                     b.Property<string>("TipSenzora")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("UredjajId")
+                    b.Property<int>("UredjajId")
+                        .HasColumnType("int");
+
+                    b.Property<Guid?>("UredjajId1")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ValidnostMjeranja")
@@ -59,7 +62,7 @@ namespace IrmaApp.Core.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UredjajId");
+                    b.HasIndex("UredjajId1");
 
                     b.ToTable("Senzori");
                 });
@@ -99,7 +102,7 @@ namespace IrmaApp.Core.Migrations
                 {
                     b.HasOne("IrmaApp.Core.Entity.Uredjaj", "Uredjaj")
                         .WithMany("Senzori")
-                        .HasForeignKey("UredjajId");
+                        .HasForeignKey("UredjajId1");
                 });
 #pragma warning restore 612, 618
         }

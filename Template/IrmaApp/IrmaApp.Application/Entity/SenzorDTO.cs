@@ -17,5 +17,6 @@ namespace IrmaApp.Core.Entity
         public Double VrijednostMjerenja { get; set; }
         public string ValidnostMjeranja { get; set; }
         public Guid Uredjaj { get; set; }
+        //evo ovdje smo pravili ovaj DTO
     }
 }

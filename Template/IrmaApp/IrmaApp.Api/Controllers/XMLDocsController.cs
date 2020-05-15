@@ -16,7 +16,7 @@ namespace IrmaApp.Api.Controllers
         private readonly IXMLService _service;
         //private ReportService _reportService;
 
-        public XMLDocsController(IXMLService ixmlService, ReportService reportService)
+        public XMLDocsController(IXMLService ixmlService)
         {
             _service = ixmlService;
             //_reportService = reportService;

@@ -16,7 +16,7 @@ namespace IrmaApp.Core.Entity
         public string Alarm { get; set; }
         public Double VrijednostMjerenja { get; set; }
         public string ValidnostMjeranja { get; set; }
-        //public int UredjajId { get; set; }
+        public int UredjajId { get; set; } 
         public Uredjaj Uredjaj { get; set; }
     }
 }
