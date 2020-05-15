@@ -35,7 +35,7 @@ namespace IrmaApp.Core.Model.Response
         public List<Senzor> GetReportBySenzorName(RequestReport report)
         {
             List<Senzor> dataBaseResponse = database.Senzori.
-                Where(x => x.ImeSenzora == report.ImeSenzora && report.MjestoSenzora == x.Uredjaj.Lokacija).Include(x => x.Uredjaj).
+                Where(x => x.ImeSenzora == report.ImeSenzora && report.MjestoSenzora == x.Uredjaj.Lokacija && report.VrijemeOd == x.VrijemeMjerenja).Include(x => x.Uredjaj).
                 ToList();
             return dataBaseResponse;
         }
